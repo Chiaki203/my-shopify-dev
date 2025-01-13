@@ -1,0 +1,8 @@
+{
+  "name": "Reward customers with loyalty points!",
+  "welcome": "Welcome to the {{TARGET}} extension!",
+  "description": "Reward customers belonging to the {{segment}} the following points:",
+  "label": "Loyalty Points",
+  "close": "Close",
+  "done": "Done"
+}
