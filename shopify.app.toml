@@ -1,0 +1,42 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "ba5f7c1b67c932f1ed0e19f5b9972769"
+name = "my-new-app"
+handle = "my-new-app-127"
+application_url = "https://canberra-inc-obvious-sharing.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "kodama-japan.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_customer_events,read_customers,write_customers,write_discounts,write_pixels,write_products"
+
+[auth]
+redirect_urls = [
+  "https://canberra-inc-obvious-sharing.trycloudflare.com/auth/callback",
+  "https://canberra-inc-obvious-sharing.trycloudflare.com/auth/shopify/callback",
+  "https://canberra-inc-obvious-sharing.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2025-01"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[app_proxy]
+url = "https://canberra-inc-obvious-sharing.trycloudflare.com/api/proxy_route"
+subpath = "subpath"
+prefix = "apps"
+
+[pos]
+embedded = false
