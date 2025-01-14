@@ -3,7 +3,7 @@
 client_id = "16b9f8d858e9b6387482108f7ac9886a"
 name = "my-new-app-test"
 handle = "my-new-app-test-4"
-application_url = "https://bidding-deer-w-springer.trycloudflare.com"
+application_url = "https://my-shopify-test.onrender.com"
 embedded = true
 
 [build]
@@ -13,13 +13,13 @@ include_config_on_deploy = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = ""
+scopes = "read_customer_events,read_customers,write_customers,write_discounts,write_pixels,write_products"
 
 [auth]
 redirect_urls = [
-  "https://bidding-deer-w-springer.trycloudflare.com/auth/callback",
-  "https://bidding-deer-w-springer.trycloudflare.com/auth/shopify/callback",
-  "https://bidding-deer-w-springer.trycloudflare.com/api/auth/callback"
+  "https://my-shopify-test.onrender.com/auth/callback",
+  "https://my-shopify-test.onrender.com/auth/shopify/callback",
+  "https://my-shopify-test.onrender.com/api/auth/callback"
 ]
 
 [webhooks]
