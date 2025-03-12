@@ -1,0 +1,20 @@
+[[extensions]]
+name = "Place Auction Bid"
+handle = "place-auction-bid"
+type = "flow_action"
+
+description = "Place a bid on an auction"
+runtime_url = "https://url.com/api/execute"
+
+[settings]
+
+[[settings.fields]]
+type = "customer_reference"
+required = true
+
+[[settings.fields]]
+type = "number_decimal"
+key = "amount"
+name = "Bid Amount"
+description = "The amount of the bid"
+required = true

@@ -1,0 +1,29 @@
+query RunInput {
+  cart {
+    deliveryGroups {
+      deliveryAddress {
+        countryCode
+      }
+      deliveryOptions {
+        handle
+        title
+      }
+    }
+  }
+  deliveryCustomization {
+    metafield(
+      namespace: "$app:delivery-customization"
+      key: "function-configuration"
+    ) {
+      value
+    }
+  }
+}
+
+# query RunInput {
+#   deliveryCustomization {
+#     metafield(namespace: "$app:delivery-customization", key: "function-configuration") {
+#       value
+#     }
+#   }
+# }

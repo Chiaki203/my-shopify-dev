@@ -1,0 +1,30 @@
+query RunInput {
+  cart {
+    cost {
+      totalAmount {
+        amount
+      }
+    }
+  }
+  paymentMethods {
+    id
+    name
+  }
+  presentmentCurrencyRate
+  paymentCustomization {
+    metafield(
+      namespace: "$app:payment-customization"
+      key: "function-configuration"
+    ) {
+      value
+    }
+  }
+}
+
+# query RunInput {
+#   paymentCustomization {
+#     metafield(namespace: "$app:payment-customization", key: "function-configuration") {
+#       value
+#     }
+#   }
+# }

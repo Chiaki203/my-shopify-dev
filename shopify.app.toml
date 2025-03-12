@@ -3,27 +3,31 @@
 client_id = "ba5f7c1b67c932f1ed0e19f5b9972769"
 name = "my-new-app"
 handle = "my-new-app-127"
-application_url = "https://canberra-inc-obvious-sharing.trycloudflare.com"
+application_url = "https://either-dicke-heart-interim.trycloudflare.com"
 embedded = true
 
 [build]
 automatically_update_urls_on_dev = true
-dev_store_url = "kodama-japan.myshopify.com"
+dev_store_url = "pitarin-zero.myshopify.com"
 include_config_on_deploy = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "read_customer_events,read_customers,write_customers,write_discounts,write_pixels,write_products"
+scopes = "read_customer_events,read_customers,read_orders,read_products,write_customers,write_discounts,write_pixels,write_products,read_files,read_delivery_customizations,write_delivery_customizations,write_orders,read_customer_payment_methods,read_own_subscription_contracts,write_own_subscription_contracts,read_all_orders,read_purchase_options,write_purchase_options,read_payment_mandate,write_payment_mandate,read_locations,write_locations,read_shipping,write_shipping,write_draft_orders,write_discounts_allocator_functions,read_payment_customizations,write_payment_customizations,write_cart_transforms"
 
 [auth]
 redirect_urls = [
-  "https://canberra-inc-obvious-sharing.trycloudflare.com/auth/callback",
-  "https://canberra-inc-obvious-sharing.trycloudflare.com/auth/shopify/callback",
-  "https://canberra-inc-obvious-sharing.trycloudflare.com/api/auth/callback"
+  "https://either-dicke-heart-interim.trycloudflare.com/auth/callback",
+  "https://either-dicke-heart-interim.trycloudflare.com/auth/shopify/callback",
+  "https://either-dicke-heart-interim.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
 api_version = "2025-01"
+
+  [[webhooks.subscriptions]]
+  compliance_topics = [ "customers/data_request", "customers/redact", "shop/redact" ]
+  uri = "/webhooks/app/compliance"
 
   [[webhooks.subscriptions]]
   topics = [ "app/scopes_update" ]
@@ -33,8 +37,22 @@ api_version = "2025-01"
   topics = [ "app/uninstalled" ]
   uri = "/webhooks/app/uninstalled"
 
+  [[webhooks.subscriptions]]
+  topics = [ "products/update" ]
+  uri = "/webhooks/app/products-update"
+  filter = "variants.price:>=800.00"
+
+  [[webhooks.subscriptions]]
+  topics = [ "customers/update" ]
+  uri = "/webhooks/app/customers-update"
+  include_fields = [ "id", "email_marketing_consent", "updated_at" ]
+
+  [[webhooks.subscriptions]]
+  topics = [ "orders/create" ]
+  uri = "/webhooks/app/orders-create"
+
 [app_proxy]
-url = "https://canberra-inc-obvious-sharing.trycloudflare.com/api/proxy_route"
+url = "https://either-dicke-heart-interim.trycloudflare.com/api/proxy_route"
 subpath = "subpath"
 prefix = "apps"
 

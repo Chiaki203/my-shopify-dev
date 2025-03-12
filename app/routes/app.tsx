@@ -2,6 +2,7 @@ import type { HeadersFunction, LoaderFunctionArgs } from "@remix-run/node";
 import { Link, Outlet, useLoaderData, useRouteError } from "@remix-run/react";
 import { boundary } from "@shopify/shopify-app-remix/server";
 import { AppProvider } from "@shopify/shopify-app-remix/react";
+import { AppProvider as DiscountProvider } from "@shopify/discount-app-components";
 import { NavMenu } from "@shopify/app-bridge-react";
 import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
 
@@ -20,13 +21,17 @@ export default function App() {
 
   return (
     <AppProvider isEmbeddedApp apiKey={apiKey}>
-      <NavMenu>
-        <Link to="/app" rel="home">
-          Home
-        </Link>
-        <Link to="/app/additional">Additional page</Link>
-      </NavMenu>
-      <Outlet />
+      <DiscountProvider locale="en-UK" ianaTimezone="Europe/Berlin">
+        <NavMenu>
+          <Link to="/app" rel="home">
+            Home
+          </Link>
+          <Link to="/app/additional">Additional page</Link>
+          <Link to="/app/pre-order">Pre Order</Link>
+          <Link to="/app/create">Create</Link>
+        </NavMenu>
+        <Outlet />
+      </DiscountProvider>
     </AppProvider>
   );
 }
