@@ -1,0 +1,12 @@
+{
+  "preferenceCard": {
+    "heading": "設定",
+    "nickName": {
+      "label": "ニックネーム"
+    },
+    "edit": "編集",
+    "modalHeading": "設定を編集",
+    "save": "保存",
+    "cancel": "キャンセル"
+  }
+}

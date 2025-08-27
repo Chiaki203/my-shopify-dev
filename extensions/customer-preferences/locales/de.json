@@ -1,0 +1,12 @@
+{
+  "preferenceCard": {
+    "heading": "Einstellungen",
+    "nickName": {
+      "label": "Spitzname"
+    },
+    "edit": "Bearbeiten",
+    "modalHeading": "Einstellungen bearbeiten",
+    "save": "Speichern",
+    "cancel": "Abbrechen"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "welcome": "Welcome to the {{target}} extension!",
+  "iWouldLikeAFreeGiftWithMyOrder": "I would like to receive a free gift with my order",
+  "addAFreeGiftToMyOrder": "Add a free gift to my order",
+  "attributeChangesAreNotSupported": "Attribute changes are not supported in this checkout"
+}
+
+{
+  "welcome": "Willkommen bei der {{target}}-Erweiterung!",
+  "iWouldLikeAFreeGiftWithMyOrder": "Ich möchte ein kostenloses Geschenk zu meiner Bestellung erhalten",
+  "addAFreeGiftToMyOrder": "Fügen Sie ein kostenloses Geschenk zu meiner Bestellung hinzu",
+  "attributeChangesAreNotSupported": "Attributänderungen werden in diesem Checkout nicht unterstützt",
+}
+
+
+{
+  "welcome": "Bienvenue dans l'extension {{target}}!",
+  "iWouldLikeAFreeGiftWithMyOrder": "Je souhaite recevoir un cadeau gratuit avec ma commande",
+  "addAFreeGiftToMyOrder": "Ajouter un cadeau gratuit à ma commande",
+  "attributeChangesAreNotSupported": "Les modifications d'attribut ne sont pas prises en charge dans cette commande"
+}

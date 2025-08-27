@@ -1,4 +1,5 @@
 query RunInput {
+  presentmentCurrencyRate
   cart {
     lines {
       id
@@ -8,16 +9,11 @@ query RunInput {
         ... on ProductVariant {
           id
           title
-          componentReferences: metafield(
-            namespace: "custom"
-            key: "component_reference"
+          bundledComponentData: metafield(
+            namespace: "bundles-price-per-component"
+            key: "function-configuration"
           ) {
-            value
-          }
-          componentQuantities: metafield(
-            namespace: "custom"
-            key: "component_quantities"
-          ) {
+            type
             value
           }
         }
@@ -25,6 +21,34 @@ query RunInput {
     }
   }
 }
+
+# query RunInput {
+#   cart {
+#     lines {
+#       id
+#       quantity
+#       merchandise {
+#         __typename
+#         ... on ProductVariant {
+#           id
+#           title
+#           componentReferences: metafield(
+#             namespace: "custom"
+#             key: "component_reference"
+#           ) {
+#             value
+#           }
+#           componentQuantities: metafield(
+#             namespace: "custom"
+#             key: "component_quantities"
+#           ) {
+#             value
+#           }
+#         }
+#       }
+#     }
+#   }
+# }
 
 # query RunInput {
 #   cart {

@@ -1,0 +1,9 @@
+
+
+{
+  "loyaltyPoints": {
+    "one": "Sie haben {{formattedPoints}} Treuepunkt",
+    "other": "Sie haben {{formattedPoints}} Treuepunkte"
+  },
+  "balanceRemaining": "Ihr Guthaben beträgt {{formattedBalance}}"
+}

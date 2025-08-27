@@ -1,0 +1,16 @@
+<div style="position: fixed; bottom: 0; right: 0">
+  {% comment %} {{ 'kitten.png' | asset_url | image_tag: width: 100 }} {% endcomment %}
+  <img src="{{ "kitten.png" | asset_url }}" width="100" loading="lazy">
+</div>
+{% schema %}
+{
+  "name": "App Embed",
+  "available_if": "{{ app.metafields.conditional.block1 }}",
+  "target": "body",
+  "enabled_on": {
+    "templates": ["product"]
+    //"groups": [""]
+  },
+  "settings": []
+}
+{% endschema %}
